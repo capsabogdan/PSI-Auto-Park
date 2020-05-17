@@ -2,6 +2,9 @@ package com.carpark.model.entities;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 import com.carpark.metamodel.AbstractEntity;
 
 @SuppressWarnings("serial")
@@ -15,7 +18,29 @@ public class RoadMapRow extends AbstractEntity {
 	private String adjacentDocNb;
 	private String notes;
 
+	@OneToOne
+	private Partner partner;
+
+	@ManyToOne
+	private RoadMap roadMap;
+
 	public RoadMapRow() {
+	}
+
+	public Partner getPartner() {
+		return partner;
+	}
+
+	public void setPartner(Partner partner) {
+		this.partner = partner;
+	}
+
+	public RoadMap getRoadmap() {
+		return roadMap;
+	}
+
+	public void setRoadmap(RoadMap roadMap) {
+		this.roadMap = roadMap;
 	}
 
 	public String getWay() {

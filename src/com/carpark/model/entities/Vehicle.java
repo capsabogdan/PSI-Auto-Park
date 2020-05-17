@@ -1,6 +1,8 @@
 package com.carpark.model.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
 import com.carpark.metamodel.AbstractEntity;
 
 @SuppressWarnings("serial")
@@ -10,10 +12,21 @@ public class Vehicle extends AbstractEntity {
 	private String registrationNumber;
 	private String brandAndModel;
 	private String ChassisSeries;
-	private String kmOnBoard;
+	private Double kmOnBoard;
 	private String fuelType;
 
+	@OneToOne
+	private Driver driver;
+
 	public Vehicle() {
+	}
+
+	public Driver getDriver() {
+		return driver;
+	}
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
 	}
 
 	public String getRegistrationNumber() {
@@ -40,11 +53,11 @@ public class Vehicle extends AbstractEntity {
 		this.ChassisSeries = ChassisSeries;
 	}
 
-	public String getKmOnBoard() {
+	public Double getKmOnBoard() {
 		return kmOnBoard;
 	}
 
-	public void setKmOnBoard(String kmOnBoard) {
+	public void setKmOnBoard(Double kmOnBoard) {
 		this.kmOnBoard = kmOnBoard;
 	}
 

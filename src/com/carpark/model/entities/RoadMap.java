@@ -1,20 +1,40 @@
 package com.carpark.model.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @SuppressWarnings("serial")
 @Entity
 public class RoadMap extends Document {
 
+	private Integer roadMapNumber;
 	private String vehicleRegistrationNum;
-	private String tripType;
 	private String transportType;
 	private double outsideSpecificConsum;
 	private double townSpecificConsumption;
 	private double outTownKm;
 	private double townKm;
 
+	@ManyToOne
+	private Driver driver;
+
 	public RoadMap() {
+	}
+
+	public Driver getDriver() {
+		return driver;
+	}
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+
+	public Integer getRoadMapNumber() {
+		return roadMapNumber;
+	}
+
+	public void setRoadMapNumber(Integer roadMapNumber) {
+		this.roadMapNumber = roadMapNumber;
 	}
 
 	public String getVehicleRegistrationNum() {
@@ -23,14 +43,6 @@ public class RoadMap extends Document {
 
 	public void setVehicleRegistrationNum(String vehicleRegistrationNum) {
 		this.vehicleRegistrationNum = vehicleRegistrationNum;
-	}
-
-	public String getTripType() {
-		return tripType;
-	}
-
-	public void setTripType(String tripType) {
-		this.tripType = tripType;
 	}
 
 	public String getTransportType() {

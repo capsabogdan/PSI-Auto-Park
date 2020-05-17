@@ -5,7 +5,7 @@ import javax.persistence.Persistence;
 
 public abstract class AbstractRepository implements TransactionManagement {
 
-	private static EntityManager em = Persistence.createEntityManagerFactory("Auto-park").createEntityManager();
+	private static EntityManager em = Persistence.createEntityManagerFactory("default").createEntityManager();
 
 	public void beginTransaction() {
 		this.getEm().getTransaction().begin();

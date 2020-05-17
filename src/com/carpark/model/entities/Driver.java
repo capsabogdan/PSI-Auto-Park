@@ -3,7 +3,6 @@ package com.carpark.model.entities;
 import javax.persistence.Entity;
 import com.carpark.metamodel.AbstractEntity;
 
-@SuppressWarnings("serial")
 @Entity
 public class Driver extends AbstractEntity {
 
@@ -13,11 +12,7 @@ public class Driver extends AbstractEntity {
 	private String Telephone;
 	private String DriverLicence;
 
-	private Driver() {
-		/*
-		 * this.position = position; this.fullName = fullName; this.active = active;
-		 * this.Telephone = Telephone; this.DriverLicence = DriverLicence;
-		 */
+	public Driver() {
 	}
 
 	public String getPosition() {

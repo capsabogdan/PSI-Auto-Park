@@ -18,6 +18,8 @@ public class Document extends AbstractEntity {
 	private Date releaseDate;
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date operatingDate;
+	
+	private String workUnit;
 
 	public Date getReleaseDate() {
 		return releaseDate;
@@ -31,7 +33,15 @@ public class Document extends AbstractEntity {
 		return operatingDate;
 	}
 
-	public void setOperatingDate(Date operatingDate) {
-		this.operatingDate = operatingDate;
+	public void setOperatingDate(Date localDateTime) {
+		this.operatingDate = localDateTime;
+	}
+
+	public String getWorkUnit() {
+		return workUnit;
+	}
+
+	public void setWorkUnit(String workUnit) {
+		this.workUnit = workUnit;
 	}
 }
